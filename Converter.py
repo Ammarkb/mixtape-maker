@@ -20,29 +20,33 @@ class GUI:
         self.master = master
         master.title("Mix-tape Maker")
         master.geometry("750x500")
+        master.configure(bg="black")
 
-        self.label = Label(master, text="Enter file name for the song list: ")
+        self.label = Label(master, text="Enter file name for the song list: ",fg="white",bg="black")
         self.label.pack()
 
-        self.entry = Entry(master, width=45)
+        self.entry = Text(master, width=45,height=1)
         self.entry.pack()
 
-        self.label_title = Label(master, text="Title of Mixtape: ")
+        self.label_title = Label(master, text="Title of Mixtape: ",fg="white",bg="black")
         self.label_title.pack()
 
-        self.entry_title = Entry(master, width=45)
+        self.entry_title = Text(master,width=45,height=1)
         self.entry_title.pack()
 
-        self.button = Button(master, text="Download", command=self.download_button_click)
+        self.label_title = Label(master, text="",fg="white",bg="black")
+        self.label_title.pack()
+
+        self.button = Button(master, text="Download",fg="black",bg="light blue",command=self.download_button_click)
         self.button.pack()
 
         self.label_help = Label(master, text="\nHOW TO USE:\n1. Create a text file on your desktop listing each song you want line by line."
                                              "\n2. Enter the text file name inside the top most box.\n3. Give a title to your mixtape.\n"
                                              "4. Click download and the mixtape will be created on your desktop."
-                                             "\n-----------------------------------------------------------------------------------\n")
+                                             "\n-----------------------------------------------------------------------------------\n",fg="white",bg="black")
         self.label_help.pack()
 
-        self.text = Text(master)
+        self.text = Text(master,height=12,width=45)
         self.text.pack()
 
     '''
